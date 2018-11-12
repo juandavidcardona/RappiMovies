@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="322" id="KGk-i7-Jjw" customClass="MovieCell" customModule="RappiMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="231" height="322"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="231" height="321.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prueba" translatesAutoresizingMaskIntoConstraints="NO" id="Wxu-vH-0GX">
+                        <rect key="frame" x="31" y="34" width="169" height="252"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shadowBottom2" translatesAutoresizingMaskIntoConstraints="NO" id="KUQ-jo-VLk">
+                        <rect key="frame" x="31" y="181" width="169" height="105"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="105" id="fNj-fx-fSU"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Walking Dead" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjx-tl-e4g">
+                        <rect key="frame" x="34" y="244" width="155.5" height="21.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83O-Gm-Xmy">
+                        <rect key="frame" x="156" y="51" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="RFX-HW-6Ay"/>
+                            <constraint firstAttribute="width" constant="34" id="WKO-xW-8XV"/>
+                        </constraints>
+                        <state key="normal" image="heart2"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Octubre, 2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPK-JI-eDs">
+                        <rect key="frame" x="36" y="263" width="99" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="qjx-tl-e4g" secondAttribute="trailing" constant="41.5" id="0a0-8s-zmg"/>
+                    <constraint firstItem="qjx-tl-e4g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="34" id="Clp-e8-ydG"/>
+                    <constraint firstAttribute="trailing" secondItem="KUQ-jo-VLk" secondAttribute="trailing" constant="31" id="GGp-eU-bwX"/>
+                    <constraint firstAttribute="bottom" secondItem="qjx-tl-e4g" secondAttribute="bottom" constant="56" id="Wr6-1h-vWr"/>
+                    <constraint firstAttribute="bottom" secondItem="KUQ-jo-VLk" secondAttribute="bottom" constant="35.5" id="Z7n-Eo-sfz"/>
+                    <constraint firstItem="KUQ-jo-VLk" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="31" id="a64-ya-7eO"/>
+                    <constraint firstItem="BPK-JI-eDs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="36" id="goh-pA-zIN"/>
+                    <constraint firstAttribute="bottom" secondItem="BPK-JI-eDs" secondAttribute="bottom" constant="40.5" id="kZW-gJ-5oX"/>
+                    <constraint firstItem="Wxu-vH-0GX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="34" id="uae-0Z-LeY"/>
+                    <constraint firstAttribute="bottom" secondItem="Wxu-vH-0GX" secondAttribute="bottom" constant="35.5" id="udg-jE-WT4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="83O-Gm-Xmy" secondAttribute="trailing" constant="25" id="waI-43-TLr"/>
+                    <constraint firstItem="83O-Gm-Xmy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="40" id="xur-lW-4ja"/>
+                    <constraint firstAttribute="trailing" secondItem="Wxu-vH-0GX" secondAttribute="trailing" constant="31" id="yFU-uE-Uff"/>
+                    <constraint firstItem="Wxu-vH-0GX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="31" id="yxT-sw-0Ah"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="date" destination="BPK-JI-eDs" id="p5q-sI-2TK"/>
+                <outlet property="mainImage" destination="Wxu-vH-0GX" id="qth-9w-uXL"/>
+                <outlet property="shadowBottom" destination="KUQ-jo-VLk" id="rN4-5j-VbH"/>
+                <outlet property="titleMovie" destination="qjx-tl-e4g" id="8dP-xW-6XF"/>
+            </connections>
+            <point key="canvasLocation" x="154.40000000000001" y="138.53073463268368"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="heart2" width="198.62069702148438" height="198.62069702148438"/>
+        <image name="prueba" width="600" height="900"/>
+        <image name="shadowBottom2" width="1200" height="342"/>
+    </resources>
+</document>

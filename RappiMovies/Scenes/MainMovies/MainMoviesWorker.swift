@@ -12,7 +12,12 @@
 
 import UIKit
 
-class MainMoviesWorker {
+protocol MoviesWorker {
+    func fetchMovies(selectedCat : Int,completitionHandler : @escaping ( ([MovieModel], Error?) -> Void ) )
+    
+}
+
+class MainMoviesWorker : MoviesWorker {
    
     func fetchMovies(selectedCat : Int,completitionHandler : @escaping ( ([MovieModel], Error?) -> Void ) ){
 

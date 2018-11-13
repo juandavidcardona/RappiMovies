@@ -52,7 +52,7 @@ class MainMoviesViewController: UIViewController, MainMoviesDisplayLogic{
     
     private func setup(){
         let viewController = self
-        let interactor = MainMoviesInteractor()
+        let interactor = MainMoviesInteractor(worker: MainMoviesWorker())
         let presenter = MainMoviesPresenter()
         let router = MainMoviesRouter()
         viewController.interactor = interactor
@@ -77,9 +77,7 @@ class MainMoviesViewController: UIViewController, MainMoviesDisplayLogic{
     // MARK: View lifecycle
     
     override func loadView() {
-        
         view = mainMoviesView
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,8 +133,6 @@ class MainMoviesViewController: UIViewController, MainMoviesDisplayLogic{
         }
         
     }
-    
-   
     
     private func changeLayout ( pickerHeight: CGFloat, tableHeight: CGFloat, tableY : CGFloat ){
         
@@ -263,7 +259,6 @@ extension MainMoviesViewController : UITableViewDataSource {
             return cell
         }
        
-        
     }
     
 }

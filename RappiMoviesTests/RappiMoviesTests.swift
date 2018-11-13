@@ -18,17 +18,49 @@ class RappiMoviesTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    // Probar si interactor llama al worker en la llamada inicial
+    func testFetchMoviesCallsWorkerToFetch (){
+        
+        //Given
+        let movieWorkerSpy = MainMoviesWorkerSpy()
+        let interator = MainMoviesInteractor(worker: movieWorkerSpy)
+        interator.presenter = MainMoviesPresentationLogicSpy()
+        
+        //When
+        let request = MainMovies.Load.Request(selectedCategory: 1)
+        interator.doLoadInitialData(request: request)
+        
+        //Then
+        XCTAssert(movieWorkerSpy.workerIsCalled, "La función doLoadInitialData en interactor no llama al worker para traer las peliculas ")
+        
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    
+    // Probar si interactor llama al presenter después de recibir las películas que le envía el worker
+    func testFetchMoviesCallsPresenterToFetch (){
+        
+       
+        //Given
+        let expectation = self.expectation(description: #function)
+        
+        let movieWorkerSpy = MainMoviesWorkerSpy()
+        let presenter = MainMoviesPresentationLogicSpy()
+        let interator = MainMoviesInteractor(worker: movieWorkerSpy)
+        interator.presenter = presenter
+        
+        let request = MainMovies.Load.Request(selectedCategory: 1)
+        interator.doLoadInitialData(request: request)
+        
+        //When
+        movieWorkerSpy.fetchMovies(selectedCat: 0) { (movies, error) in
+            let response = MainMovies.Load.Response(movies: movies)
+            presenter.presentInitialData(response: response)
+            expectation.fulfill()
         }
+        
+        //Then
+        waitForExpectations(timeout: 3)
+        XCTAssert(presenter.presentIsCalled, "La función doLoadInitialData en interactor no llama al worker para traer las peliculas ")
     }
-
 }

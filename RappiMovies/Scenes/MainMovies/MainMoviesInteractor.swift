@@ -36,12 +36,19 @@ class MainMoviesInteractor: MainMoviesBusinessLogic, MainMoviesDataStore {
     
     var presenter: MainMoviesPresentationLogic?
     var worker: MainMoviesWorker?
+    
+    init(worker : MainMoviesWorker ) {
+        
+        self.worker = worker
+        
+    }
+    
     //var name: String = ""
     
     // MARK: Do something
     
     func doLoadInitialData(request: MainMovies.Load.Request){
-        worker = MainMoviesWorker()
+       
         let category = request.selectedCategory
         worker?.fetchMovies( selectedCat: category, completitionHandler: { (movies, error) in
             let response = MainMovies.Load.Response(movies: movies)
